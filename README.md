@@ -1,9 +1,9 @@
 # CAM-IntegratedEnv
 
 ## This project generates:
-### Opitz codes for specific parts.
-### performs clustering.
-### process sheets for each part.
+___Opitz codes for specific parts.__
+___performs clustering.__
+__process sheets for each part.__
 
 ## How to Use
 
