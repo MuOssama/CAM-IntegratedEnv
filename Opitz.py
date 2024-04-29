@@ -3,6 +3,8 @@ Import modules
 """
 from tkinter import *
 from Utils import *
+from PIL import Image, ImageTk
+import subprocess
 
 
 #setup the window
@@ -17,6 +19,7 @@ root.iconbitmap("icon.ico")
 functions
 """
 CODE = ["X","X","X","X","X"]
+opitzCodes = []
 outputParts = []
 totalOutputParts = []
 
@@ -426,6 +429,7 @@ def Digit5th():
 
 def writePartsFile():
     global totalOutputParts
+    global opitzCodes
     
     # Open a file for reading
     file_path = 'Operations.txt'
@@ -436,7 +440,13 @@ def writePartsFile():
             line = ' '.join(map(str, part)) + '\n'
             # Write the string to the file
             file.write(line)
-
+    with open('OpitzCodes.txt', 'w') as f:
+    # Iterate over the list and write each element to a new line in the file
+        for item in opitzCodes:
+            f.write("%s\n" % item)
+    
+    clear_widgets(root)
+    cluster()
             
             
 
@@ -445,6 +455,7 @@ def writePartsFile():
 def finish():
     clear_widgets(root)
     global CODE
+    global opitzCodes
 
     output_label = Label(root, text=f"Opitz Code: {''.join(CODE)}",font=('Helvatical bold',20), bg='green')
     output_label.place(x=280,y=250)
@@ -452,8 +463,11 @@ def finish():
     RepeatButton.place(x=screenWidth*0.75,y=screenHeight*0.78)
     FinishButton = Button(root, text='Finish',command=writePartsFile ,width=25,height=3, bg='red')
     FinishButton.place(x=screenWidth*0.75,y=screenHeight*0.88)
+    opitzCodes.append(''.join(CODE))
     CODE = ["X","X","X","X","X"]
-
+    
+def cluster():
+    subprocess.run(['Clustering.exe'])
 
 """
 LOAD the credits screen

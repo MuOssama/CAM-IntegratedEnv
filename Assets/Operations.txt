@@ -1,0 +1,4 @@
+180 80 turning turning turningThreading
+150 50 turningThreading turningGrooving
+150 13 turningGrooving turning
+120 8 turning turningGrooving turning

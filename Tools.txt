@@ -1,0 +1,10 @@
+T01 TurningTool D1
+T02 TurningTool D2
+T03 TurningTool D5
+T04 ThreadingTool D1
+T05 ThreadingTool D2
+T06 ThreadingTool D5
+T07 GroovingTool D1
+T08 GroovingTool D2
+T09 GroovingTool D5
+
